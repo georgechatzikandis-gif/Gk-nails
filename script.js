@@ -146,6 +146,49 @@
     if (e.key === "ArrowRight") show(current + 1);
   });
 
+  /* ---------- Live opening hours (from the owner dashboard) ---------- */
+  (async () => {
+    const list = document.getElementById("hoursList");
+    const status = document.getElementById("openStatus");
+    if (!list) return;
+    const SB_URL = "https://bxysrhterzbkrkkeoqgn.supabase.co";
+    const SB_KEY = "sb_publishable_CmpDYzf1_eovA5OviFqejQ_-H1u1Mfh"; // public key, read-only data
+    const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    try {
+      const res = await fetch(`${SB_URL}/rest/v1/business_hours?select=weekday,open_time,close_time&order=weekday,open_time`, { headers: { apikey: SB_KEY } });
+      if (!res.ok) throw new Error(res.status);
+      const rows = await res.json();
+      if (!rows.length) return;
+      const p = Object.fromEntries(new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Athens", weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(new Date()).map((x) => [x.type, x.value]));
+      const today = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].indexOf(p.weekday) + 1;
+      const nowT = `${p.hour}:${p.minute}`;
+      const t5 = (t) => t.slice(0, 5);
+      list.innerHTML = DAYS.map((name, i) => {
+        const r = rows.filter((x) => x.weekday === i + 1);
+        const txt = r.length ? r.map((x) => `${t5(x.open_time)}–${t5(x.close_time)}`).join(", ") : '<span class="closed">Closed</span>';
+        return `<li class="${i + 1 === today ? "today" : ""}"><span>${name}</span><span>${txt}</span></li>`;
+      }).join("");
+      const todayRows = rows.filter((x) => x.weekday === today);
+      const openNow = todayRows.find((x) => t5(x.open_time) <= nowT && nowT < t5(x.close_time));
+      if (openNow) {
+        status.textContent = `Open now · closes at ${t5(openNow.close_time)}`;
+        status.classList.add("open");
+      } else {
+        const later = todayRows.find((x) => t5(x.open_time) > nowT);
+        let next = later ? `opens at ${t5(later.open_time)}` : "";
+        for (let k = 1; !next && k <= 7; k++) {
+          const d = ((today - 1 + k) % 7) + 1;
+          const r = rows.find((x) => x.weekday === d);
+          if (r) next = `opens ${k === 1 ? "tomorrow" : DAYS[d - 1]} at ${t5(r.open_time)}`;
+        }
+        status.textContent = `Closed${next ? " · " + next : ""}`;
+      }
+      status.hidden = false;
+    } catch (e) {
+      /* keep "By appointment" */
+    }
+  })();
+
   /* ---------- Falling petals ---------- */
   const canvas = document.getElementById("petals");
   if (!reduceMotion && canvas.getContext) {
