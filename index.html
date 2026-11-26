@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GK Beauty Salon · Nails in Ialysos, Rhodes</title>
+  <meta name="description" content="GK Beauty Salon — hand-painted nail art, gel and acrylic manicures in Ialysos, Rhodes." />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <img src="images/logo.png" alt="" class="preloader__logo" />
+    <div class="preloader__bar"><span></span></div>
+  </div>
+
+  <!-- Floating petals canvas -->
+  <canvas id="petals" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#home" class="nav__brand">
+      <img src="images/logo.png" alt="GK Beauty Salon logo" />
+      <span>GK Beauty</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn--small">Book now</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero__blob hero__blob--1"></div>
+      <div class="hero__blob hero__blob--2"></div>
+      <div class="hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow split-in">Nail Studio · Ialysos, Rhodes</p>
+          <h1 class="hero__title">
+            <span class="line"><span>Little works</span></span>
+            <span class="line"><span>of <em>art,</em></span></span>
+            <span class="line"><span>at your fingertips.</span></span>
+          </h1>
+          <p class="hero__lead fade-up">Hand-painted designs, flawless gel and soft, elegant shapes — made with patience and love at GK Beauty Salon.</p>
+          <div class="hero__cta fade-up">
+            <a href="#contact" class="btn">Book an appointment</a>
+            <a href="#gallery" class="btn btn--ghost">See our work</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__logo-wrap" data-parallax="0.08">
+            <svg class="hero__ring" viewBox="0 0 200 200" aria-hidden="true">
+              <defs><path id="circlePath" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0" /></defs>
+              <text><textPath href="#circlePath">GK BEAUTY SALON ✿ NAIL ART ✿ GEL ✿ CARE ✿ </textPath></text>
+            </svg>
+            <img src="images/logo.png" alt="GK Beauty Salon" class="hero__logo" />
+          </div>
+          <figure class="hero__card hero__card--a tilt" data-parallax="-0.12">
+            <img src="images/nails-floral.jpg" alt="Soft pink almond nails with white floral and gold line art" />
+          </figure>
+          <figure class="hero__card hero__card--b tilt" data-parallax="0.16">
+            <img src="images/nails-pink-marble.jpg" alt="Pink marble short square nails" />
+          </figure>
+        </div>
+      </div>
+      <a href="#about" class="hero__scroll" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Gel Polish</span><i>✿</i><span>Nail Art</span><i>✿</i><span>French Tips</span><i>✿</i><span>Extensions</span><i>✿</i><span>Marble</span><i>✿</i><span>Manicure</span><i>✿</i><span>Pedicure</span><i>✿</i>
+        <span>Gel Polish</span><i>✿</i><span>Nail Art</span><i>✿</i><span>French Tips</span><i>✿</i><span>Extensions</span><i>✿</i><span>Marble</span><i>✿</i><span>Manicure</span><i>✿</i><span>Pedicure</span><i>✿</i>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section class="about section" id="about">
+      <div class="about__media reveal reveal--left">
+        <div class="about__frame">
+          <img src="images/nails-kisses.jpg" alt="Almond nails with red lips and hearts and burgundy french tips" data-parallax-img />
+        </div>
+        <div class="about__badge">
+          <strong data-count="100">0</strong><span>% hand<br/>painted</span>
+        </div>
+      </div>
+      <div class="about__text">
+        <p class="eyebrow reveal">About us</p>
+        <h2 class="reveal">A cosy corner of Rhodes <em>for your hands</em></h2>
+        <p class="reveal">At GK Beauty Salon every set is designed for you. Whether it's a clean, glossy nude, a romantic floral or something bold and playful, we take our time on the details — shaping, cuticle care and a finish that lasts.</p>
+        <ul class="about__points">
+          <li class="reveal"><span>✿</span> Hygienic, sterilised tools for every client</li>
+          <li class="reveal"><span>✿</span> Quality gel products for long-lasting shine</li>
+          <li class="reveal"><span>✿</span> Custom designs — bring your inspiration</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services section" id="services">
+      <div class="section__head">
+        <p class="eyebrow reveal">What we do</p>
+        <h2 class="reveal">Our <em>services</em></h2>
+      </div>
+      <div class="services__grid">
+        <article class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 48 48"><path d="M18 42V20c0-5 3-12 6-12s6 7 6 12v22z"/><path d="M18 30h12"/></svg>
+          </div>
+          <h3>Gel Manicure</h3>
+          <p>Long-lasting, high-shine colour with full nail prep and cuticle care.</p>
+        </article>
+        <article class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 48 48"><path d="M24 8c4 6 10 8 10 16a10 10 0 0 1-20 0c0-8 6-10 10-16z"/><path d="M24 20v14"/><path d="M19 27l5 4 5-4"/></svg>
+          </div>
+          <h3>Hand-painted Nail Art</h3>
+          <p>Florals, hearts, lines, animal prints — any design, painted freehand.</p>
+        </article>
+        <article class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 48 48"><path d="M16 42V18c0-6 4-12 8-12s8 6 8 12v24z"/><path d="M16 14c4 3 12 3 16 0"/></svg>
+          </div>
+          <h3>Extensions</h3>
+          <p>Gel or acrylic extensions in almond, square, coffin or your shape.</p>
+        </article>
+        <article class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 48 48"><path d="M14 40V20c0-5 4-10 10-10s10 5 10 10v20z"/><path d="M14 22c5 4 15 4 20 0"/></svg>
+          </div>
+          <h3>French &amp; Ombré</h3>
+          <p>Classic, coloured or micro french and soft baby-boomer gradients.</p>
+        </article>
+        <article class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 48 48"><path d="M10 30c4-8 10-6 14-2s10 6 14-2"/><path d="M10 38c4-8 10-6 14-2s10 6 14-2"/><circle cx="24" cy="14" r="5"/></svg>
+          </div>
+          <h3>Marble &amp; Effects</h3>
+          <p>Marble, chrome, cat-eye and glitter finishes that catch the light.</p>
+        </article>
+        <article class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 48 48"><ellipse cx="24" cy="30" rx="10" ry="12"/><circle cx="14" cy="12" r="3"/><circle cx="21" cy="9" r="3"/><circle cx="28" cy="9" r="3"/><circle cx="34" cy="13" r="2.5"/></svg>
+          </div>
+          <h3>Pedicure</h3>
+          <p>Relaxing pedicure with gel finish — summer-ready feet all year.</p>
+        </article>
+      </div>
+      <p class="services__note reveal">Prices vary by design — send us a message for a quote.</p>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery section" id="gallery">
+      <div class="section__head">
+        <p class="eyebrow reveal">Portfolio</p>
+        <h2 class="reveal">Fresh from <em>our table</em></h2>
+      </div>
+      <div class="gallery__grid">
+        <figure class="gallery__item reveal tilt" data-caption="White florals with gold lines">
+          <img src="images/nails-floral.jpg" alt="Soft pink almond nails with white floral and gold line art" loading="lazy" />
+          <figcaption>White florals &amp; gold</figcaption>
+        </figure>
+        <figure class="gallery__item reveal tilt" data-caption="Zebra french with red blossoms">
+          <img src="images/nails-zebra-floral.jpg" alt="Zebra print french tips with red airbrushed blossoms" loading="lazy" />
+          <figcaption>Zebra &amp; blossoms</figcaption>
+        </figure>
+        <figure class="gallery__item reveal tilt" data-caption="Kisses, hearts & burgundy tips">
+          <img src="images/nails-kisses.jpg" alt="Almond nails with red lips and hearts and burgundy french tips" loading="lazy" />
+          <figcaption>Kisses &amp; hearts</figcaption>
+        </figure>
+        <figure class="gallery__item reveal tilt" data-caption="Soft pink marble">
+          <img src="images/nails-pink-marble.jpg" alt="Pink marble short square nails" loading="lazy" />
+          <figcaption>Pink marble</figcaption>
+        </figure>
+      </div>
+      <div class="gallery__more reveal">
+        <a class="btn btn--ghost" href="https://www.instagram.com/gkbeauty.salon/" target="_blank" rel="noopener">More on Instagram @gkbeauty.salon</a>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+      <button class="lightbox__close" aria-label="Close">&times;</button>
+      <button class="lightbox__nav lightbox__nav--prev" aria-label="Previous">&#8249;</button>
+      <figure>
+        <img src="" alt="" />
+        <figcaption></figcaption>
+      </figure>
+      <button class="lightbox__nav lightbox__nav--next" aria-label="Next">&#8250;</button>
+    </div>
+
+    <!-- Process -->
+    <section class="process section">
+      <div class="section__head">
+        <p class="eyebrow reveal">Your visit</p>
+        <h2 class="reveal">How it <em>works</em></h2>
+      </div>
+      <ol class="process__steps">
+        <li class="reveal"><span class="process__num">01</span><h3>Message us</h3><p>Send a DM with your idea or a photo you love.</p></li>
+        <li class="reveal"><span class="process__num">02</span><h3>Pick a time</h3><p>We'll find a slot that suits your day.</p></li>
+        <li class="reveal"><span class="process__num">03</span><h3>Relax</h3><p>Sit back while we shape, prep and paint.</p></li>
+        <li class="reveal"><span class="process__num">04</span><h3>Show them off</h3><p>Leave with nails you'll keep looking at.</p></li>
+      </ol>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact section" id="contact">
+      <div class="contact__card reveal">
+        <img src="images/logo.png" alt="" class="contact__logo" />
+        <p class="eyebrow">Book your appointment</p>
+        <h2>Ready for <em>new nails?</em></h2>
+        <p>The quickest way to book is a message on Instagram — tell us the design you have in mind and we'll get back to you.</p>
+        <div class="contact__actions">
+          <a class="btn" href="https://ig.me/m/gkbeauty.salon" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            Message on Instagram
+          </a>
+        </div>
+        <div class="contact__info">
+          <div><span>Where</span>Ialysos, Rhodes, Greece</div>
+          <div><span>Instagram</span><a href="https://www.instagram.com/gkbeauty.salon/" target="_blank" rel="noopener">@gkbeauty.salon</a></div>
+          <div><span>Hours</span>By appointment</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="images/logo.png" alt="" />
+    <p>© <span id="year"></span> GK Beauty Salon · Ialysos, Rhodes</p>
+  </footer>
+
+  <a href="#home" class="to-top" id="toTop" aria-label="Back to top">↑</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
